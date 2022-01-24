@@ -18,6 +18,8 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
+    - name: Fetch example pak files from submodule
+      run: git submodule update --init
     - name: Fuse dependency
       run: sudo apt-get install -y libfuse-dev pkg-config
     - name: Build
